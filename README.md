@@ -1,4 +1,4 @@
-## Image Compression Service Overview
+<h2 align="center">Image Compression Service Overview</h2>
 
 ### Overview:
 
@@ -232,7 +232,7 @@ The service is containerized using **Docker**, facilitating easy deployment and 
 - **Docker Compose**: Orchestrates multiple Docker containers (FastAPI, Celery, MongoDB, MinIO).
 - **Environment Variables**: Configures service endpoints, credentials, and other settings. Refer `.env.sample` file.
 
-### Security Considerations
+### Security Considerations:
 
 To enhance security, the service implements authentication mechanisms for API endpoints, controls access to sensitive operations, and ensures data encryption for transmission and storage.
 
@@ -240,12 +240,13 @@ To enhance security, the service implements authentication mechanisms for API en
 - **Authorization**: Control access to sensitive operations like uploading and downloading images.
 - **Data Encryption**: Ensure data transmission and storage are encrypted.
 
-### Conclusion
+### Conclusion:
 
 This document provides a comprehensive overview of the image compression service architecture, including its components, API functionality, Celery task management, integration with MongoDB and MinIO for data storage, Docker deployment setup, security measures, and user interaction scenarios. It serves as a guide for deploying, utilizing, and securing the image compression service effectively in various operational environments. Additionally, it covers API endpoints, usage instructions, and more.
 
 ---
 
-<center>
-** <b>End of Document</b> **
-</center>
+<h4 align="center">End of Document</h4>
+
+---
+
