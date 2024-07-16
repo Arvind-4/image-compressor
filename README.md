@@ -122,6 +122,7 @@ bash commands/background-task.sh
 ├── .env.sample # Env file for reference
 ├── .gitbook
 │   └── diagram.png # Architecture diagram
+├── LICENSE # LICENSE file forr the project
 ├── poetry.lock # Poetry lock file
 ├── pyproject.toml # Poetry file
 ├── .python-version # Python version
@@ -133,7 +134,7 @@ bash commands/background-task.sh
 │   └── sheet.csv # Sample csv file for testing and reference
 └── set-env.txt # COmmand to set and load env variables
 
-4 directories, 31 files
+4 directories, 32 files
 ```
 
 ### Components:
@@ -249,4 +250,3 @@ This document provides a comprehensive overview of the image compression service
 <h4 align="center">End of Document</h4>
 
 ---
-
