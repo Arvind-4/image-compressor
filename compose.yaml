@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.docker
+    depends_on:
+      - mongo
+      - redis
+      - minio
+  celery:
+    container_name: celery
+    build:
+      context: .
+      dockerfile: celery.Dockerfile
+    env_file:
+      - ./.env.docker
+    depends_on:
+      - mongo
+      - redis
+      - minio
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    env_file:
+      - ./.env.docker
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-admin-ui
+    ports:
+    - 8081:8081
+    env_file:
+      - ./.env.docker
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+  minio:
+    image: quay.io/minio/minio:latest
+    volumes:
+      - ./minio-images:/var/lib/minio/minio-images
+    ports:
+      - 9000:9000
+      - 9001:9001
+    env_file:
+      - ./.env.docker      
+    command: minio server /var/lib/minio/minio-images

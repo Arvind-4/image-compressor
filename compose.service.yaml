@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - 27017:27017
+    env_file:
+      - ./.env
+      
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-admin-ui
+    ports:
+    - 8081:8081
+    env_file:
+      - ./.env
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  minio:
+    image: quay.io/minio/minio:latest
+    volumes:
+      - ./minio-images:/var/lib/minio/minio-images
+    ports:
+      - 9000:9000
+      - 9001:9001
+    env_file:
+      - ./.env      
+    command: minio server /var/lib/minio/minio-images

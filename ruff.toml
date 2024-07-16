@@ -1,0 +1,33 @@
+fix = true
+line-length = 88
+respect-gitignore = true
+src = ["src"]
+target-version = "py39"
+output-format = "grouped"
+show-fixes = true
+
+[lint]
+extend-select = [
+  "W",
+  "I",
+  "UP",
+  "COM",
+  "DJ",
+  "EXE",
+  "ISC",
+  "ICN",
+  "G201",
+  "INP",
+  "PIE",
+  "Q",
+  "RSE",
+  "T20",
+  "SIM",
+  "TID",
+  "TCH",
+  "PLC",
+  "PLE",
+  "RUF",
+  "FLY",
+]
+ignore = ["DJ001", "SIM105", "RUF012"]
