@@ -110,6 +110,7 @@ bash commands/background-task.sh
 │   ├── storage.py # Minio client file
 │   ├── tasks.py # Celery worker file
 │   └── utils.py # functions performed on data
+│   └── webhooks.py # webhook url for the repo
 ├── celery.Dockerfile # Docker file for celery
 ├── commands
 │   ├── background-task.sh # Celery command
@@ -134,7 +135,7 @@ bash commands/background-task.sh
 │   └── sheet.csv # Sample csv file for testing and reference
 └── set-env.txt # COmmand to set and load env variables
 
-4 directories, 32 files
+4 directories, 33 files
 ```
 
 ### Components:
@@ -173,7 +174,7 @@ The service allows users to upload CSV files containing image data, initiate ima
 
 #### Upload CSV File:
 
-- **Endpoint**: `/upload/`
+- **Endpoint**: `/api/upload/`
 - **Method**: POST
 - **Parameters**:
   - `file`: CSV file containing image data.
@@ -184,7 +185,7 @@ The service allows users to upload CSV files containing image data, initiate ima
 
 #### Check Task Status:
 
-- **Endpoint**: `/status/{request_id}`
+- **Endpoint**: `/api/status/{request_id}`
 - **Method**: GET
 - **Parameters**:
   - `request_id`: Unique identifier for the request.
@@ -193,7 +194,7 @@ The service allows users to upload CSV files containing image data, initiate ima
 
 #### Download Compressed Images:
 
-- **Endpoint**: `/download/{request_id}`
+- **Endpoint**: `/api/download/{request_id}`
 - **Method**: GET
 - **Parameters**:
   - `request_id`: Unique identifier for the request.
